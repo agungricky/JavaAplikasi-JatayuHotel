@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="600" pageHeight="750" columnWidth="560" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d2f76b0f-c3b3-4707-85b5-66293089f3c9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="tanggal" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="kamar" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Nama" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT Tgl_cekin, Tgl_cekout, No_kamar, Nama_Tamu, Total_bayar, data_pengujung.Nama, CURTIME(), CURDATE() FROM cek_in, data_pengujung WHERE cek_in.Tgl_cekout=$P{tanggal} AND cek_in.No_kamar=$P{kamar} AND data_pengujung.User=$P{Nama}]]>
+	</queryString>
+	<field name="Tgl_cekin" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tgl_cekout" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="No_kamar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Tamu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Total_bayar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CURTIME()" class="java.sql.Time"/>
+	<field name="CURDATE()" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6b4a0c05-f89f-45be-b143-1f04f4d0a97b" x="110" y="9" width="233" height="65"/>
+				<box>
+					<pen lineStyle="Dashed"/>
+					<topPen lineStyle="Dashed"/>
+					<leftPen lineStyle="Dashed"/>
+					<bottomPen lineStyle="Dashed"/>
+					<rightPen lineStyle="Dashed"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="54" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[JATAYU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="af6bf238-fe51-4e8f-8fb2-841f1ab58770" x="257" y="74" width="222" height="49"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="40" isBold="true" isItalic="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[HOTEL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="efb6ad1b-353e-43f7-ad6a-fd4cd460c98c" x="209" y="0" width="148" height="20"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[J A T A Y U G R U P]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="99fc22ce-c78e-461e-aa27-507cd1ffd6a8" x="156" y="20" width="250" height="20"/>
+				<textElement>
+					<font size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jl. Suekarno Hatta No, 11 Kota Nganjuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b4da97a4-6445-4d13-8e4d-880c65a53026" x="190" y="40" width="216" height="20"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[NPWP : 01.330.923.6.111]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="3cff0da0-6947-4550-b4b8-856153b9fe41" x="26" y="0" width="493" height="15"/>
+				<textElement/>
+				<text><![CDATA[===============================================================================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3cff0da0-6947-4550-b4b8-856153b9fe41" x="26" y="46" width="493" height="15"/>
+				<textElement/>
+				<text><![CDATA[===============================================================================================]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="edbf4018-3cbc-4b59-9c86-ffa92e2cd1af" x="286" y="16" width="126" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f971939a-2d8b-49b9-8537-4127cd6fda4c" x="118" y="9" width="34" height="36"/>
+				<textElement>
+					<font size="28"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f971939a-2d8b-49b9-8537-4127cd6fda4c" x="186" y="10" width="34" height="36"/>
+				<box>
+					<pen lineStyle="Dashed"/>
+					<topPen lineStyle="Dashed"/>
+					<leftPen lineStyle="Dashed"/>
+					<bottomPen lineStyle="Dashed"/>
+					<rightPen lineStyle="Dashed"/>
+				</box>
+				<textElement>
+					<font size="28"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField pattern="HH.mm">
+				<reportElement uuid="c9f77b84-5d89-478c-a83a-22c6a28b326c" x="132" y="16" width="100" height="30"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CURTIME()}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yy">
+				<reportElement uuid="da22c0f8-dee8-45c1-9369-af68cbba6140" x="38" y="14" width="87" height="30"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CURDATE()}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="17a27669-fb52-4f70-b48a-502326a92fc8" x="198" y="16" width="100" height="28"/>
+				<textElement>
+					<font size="18" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[By. Kasir :]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="299" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f971939a-2d8b-49b9-8537-4127cd6fda4c" x="87" y="7" width="170" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[ Tanggal Check IN]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d85ca811-4f68-4d35-bbec-bc8317a23f28" x="314" y="40" width="157" height="34"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tgl_cekout}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="af71cd0e-18a4-49ba-a6bb-ede6dcc606c5" x="87" y="40" width="170" height="34"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Tanggal Check OUT]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e49b6632-65c2-4619-804b-63b608664a9d" x="314" y="74" width="157" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{No_kamar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5e9b8a7a-1c81-411e-9878-f94f3aab924f" x="87" y="74" width="170" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[      Nomor Kamar]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="488c8368-cccc-43fc-afe5-803ed7e643e4" x="314" y="107" width="157" height="34"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nama_Tamu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="1e7461bb-2356-4c1b-8941-04538ac8f0a5" x="87" y="107" width="170" height="34"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[       Nama Tamu ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="a118c899-37e7-48bb-b7b2-3ab7e95e730c" x="314" y="141" width="157" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Total_bayar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f649f787-adcb-485f-961e-2c1b87904db5" x="87" y="141" width="170" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[         Total Bayar ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de575202-8181-48e3-8f01-791a5a2f09b1" x="277" y="7" width="16" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[||]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de575202-8181-48e3-8f01-791a5a2f09b1" x="277" y="41" width="16" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[||]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de575202-8181-48e3-8f01-791a5a2f09b1" x="277" y="74" width="16" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[||]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de575202-8181-48e3-8f01-791a5a2f09b1" x="277" y="107" width="16" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[||]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de575202-8181-48e3-8f01-791a5a2f09b1" x="277" y="140" width="16" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[||]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b7e742d5-da9f-4ed8-ab7f-fff28b390f5f" x="286" y="223" width="233" height="18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[======================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b7e742d5-da9f-4ed8-ab7f-fff28b390f5f" x="286" y="274" width="233" height="18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[======================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="57bac962-e454-406f-859c-09fc8530afed" x="286" y="241" width="113" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Total Bayar :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ac0da441-dd7f-4d22-9bce-50cc2e17cb65" x="314" y="7" width="156" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tgl_cekin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a118c899-37e7-48bb-b7b2-3ab7e95e730c" x="399" y="241" width="157" height="33"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Total_bayar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a0fe2cce-88a3-4d03-aded-069d744924ea" x="135" y="10" width="301" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[TERIMAKASIH SILAHKAN DATANG KEMBALI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9017c6ec-fe75-4ef6-9ba3-5bfd3cbcb3ee" x="122" y="30" width="348" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[=========== LAYANAN CUSTOMER ===========]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1518a786-63d4-4658-b251-806c82097603" x="157" y="50" width="279" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[SMS 081276435512   CALL 089723411]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8b1b2b9c-24af-48f7-ab57-27aafbd1908f" x="180" y="70" width="227" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[EMAIL : JatayuGrup@gmail.com]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

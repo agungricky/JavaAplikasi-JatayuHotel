@@ -1,0 +1,16 @@
+Aplikasi Ada di folder dist bernama Jatayu hotel.exe
+
+1. User Baru bisa Masuk dengan Klik Help -> Reset
+2. Masuk dengan User= Admin  Password=123
+3. Buat Akun permanen Untuk Login, Masuk Ke Cmd -> ketikan
+   "INSERT INTO data_pengujung VALUES(' No_Ktp ', ' Nama ', ' Alamat ', ' jenis_kelamin ', ' User ', ' Password ') "
+   \\Ganti data Yang ada dalam petik tanpa menghilangkan tanda petiknya
+4. Login Ulang dengan dengan User & password yang baru saja di buat
+5. Atau Masuk dengan USER : Ricky   Pass : republik indo
+
+Nama Kelompok :
+1. Ricky Agung Sumiranto 2013020101
+2. Ridho Kunco Adji Wibowo 2013020212
+3. M. Habib Mustofa 2013020146
+4. Ika Maria Daniati 2013020085
+5. Tsalina Tsaniatul Mabruroh 2013020182
